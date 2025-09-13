@@ -1,0 +1,67 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-repeat: no-repeat;
+	
+	
+}
+#page{
+	width: 100%;
+	height: auto;	
+}
+#root{
+	width: 70%;
+	height: 100%;
+	margin: auto;	
+}
+
+#h1{
+	text-align: center; 
+	padding-top: 40px; 
+	padding-bottom: 20px;
+}
+
+a{
+	width: 35px;
+	margin-right: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+.classify{
+	background-color: rgb(15, 95, 141);
+	color: white;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	margin-top: 5px;
+	align-items: center;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: row;
+}
+
+.Subheadings{
+	width: 10%;
+	height: auto;
+	line-height: auto;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-right: 1px solid black;
+	
+}
+
+.content{
+	width: 90%;
+	height: auto;
+	line-height: auto;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	
+}
