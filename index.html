@@ -1,0 +1,119 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<meta charset="utf-8" content="width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no" />
+	<title>网站收藏</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<!-- <script src="static/vue.global.js"></script> -->
+</head>
+<body>	
+	<div id="root">
+		<div id="page">
+			<div id="h1">
+				<h1>网站收藏</h1>
+			</div>
+			<div class="classify" v-for="items in urls">
+				<div class="Subheadings">{{items.kind}}</div>
+				<div class="content">
+					<a v-for="item in items.website" :href="item.url" target="_blank">{{item.title}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		const { createApp } = Vue
+		createApp({
+			data() {
+				return {
+					urls: [
+						{
+							kind: "设计参考效果",
+							website: [
+								{title: "建E", url: "https://www.justeasy.cn/"},
+								{title: "知末", url: "https://www.znzmo.com/"},
+								{title: "拓者", url: "https://www.tuozhe8.com/"},
+								{title: "马蹄", url: "https://www.vsszan.com/forum.php"},							
+								{title: "站酷", url: "https://www.zcool.com.cn/discover?cate=0&subCate=637"},
+								{title: "室内设计师联盟", url: "https://www.cool-de.com/portal.php"},
+								{title: "花瓣", url: "https://huaban.com/"},
+								{title: "大作", url: "https://www.bigbigwork.com/"}								
+							]
+						},
+						{
+							kind: "素材",
+							website: [
+								{ title: "爱给网", url: "https://www.aigei.com/" },
+								{ title: "游戏素材", url: "http://www.sucaixiang.com/" },
+								{ title: "千图网", url: "https://www.58pic.com/" },
+								{ title: "palettemaker-配色网", url: "https://palettemaker.com/" }
+							]
+						},
+						{
+							kind: "AI工具",
+							website: [
+								{title: "AI工具集", url: "https://ai-bot.cn/#term-38"},
+								{title: "TTSMaker在线AI配音工具", url: "https://ttsmaker.cn/"},
+								{title: "去水印AI", url: "https://www.watermarkremover.io/zh/upload"},
+								{title: "图片放大AI", url: "https://ai.nero.com/zh-cn/image-upscaler"},
+								{title: "Google AI Studio", url: "https://aistudio.google.com/prompts/new_chat"}
+								
+							]
+						},
+						{
+							kind: "机场",
+							website: [
+								{title: "SSRDOG", url: "https://kerrynotes.com/ssrdog-review/"},
+								{title: "淘气兔", url: "https://vip.taoqitu.pro/shop.html"},
+								{title: "WgetCloud", url: "https://j8doba2sodptvzprvmcb.wgetcloud.org/"},
+								{title: "龙猫云", url: "https://a22.lml2vipaff01.cc/register?aff=jnSkBSZi"},
+								{title: "TaiShan Net", url: "https://jpcdn.taishan2025.icu/register?code=65LcgcFT"},
+								{title: "大哥云", url: "https://aff02.dgy02.com/#/register?code=SSEelIsB"},
+								{title: "闪电猫", url: "https://a01.scaffb08.cc/auth/register"},
+								{title: "魔戒", url: "https://mojie.xn--yrs494l.com/register?aff=NYbo711r"},
+								{title: "91", url: "https://91b18.cc/#/register?code=mmG8qyB4"},
+								{title: "GLaDOS", url: "https://glados.space/"},
+								{title: "CyberGuard", url: "https://www.cyberguard.best/#/register?code=Q8IXzRPW"},
+								{title: "奈云", url: "https://www.v2ny.de/#/register?path=register&code=ARsdCIDL"},
+								{title: "Nice Cloud", url: "https://nicecloud.co/register?aff=t9xkqhMV"}
+							]
+						},
+						{
+							kind: "工具",
+							website: [
+								{title: "浏览器脚本大全", url: "https://greasyfork.org/zh-CN"},
+								{title: "enigma_virtual_box封包工具", url: "https://www.enigmaprotector.com/en/aboutvb.html"},
+                                {title: "图片取色器", url: "https://c.runoob.com/front-end/6214/#d7e9ff"},								
+                                {title: "IT-tools", url: "https://tools.datapipe.top/"},
+								{title: "图片转ico", url: "to_ico.html"}
+							]
+						},
+						{
+							kind: "学习",
+							website: [
+								{title: "中国大学MOOC", url: "https://www.icourse163.org/"},
+								{title: "菜鸟教程", url: "https://www.runoob.com/"}
+							]
+						},
+						{
+							kind: "系统",
+							website: [
+								{ title: "微软系统", url: "https://msdn.itellyou.cn/" }
+							]
+						},
+						{	
+							kind: "免费电影",
+							website: [
+								{ title: "6v电影网", url: "https://www.hao6v.me/" }
+							]
+						}
+						
+					]
+					
+				};
+			}
+		}).mount("#root")
+
+	</script>
+</body>
+</html>
