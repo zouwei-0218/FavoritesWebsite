@@ -23,12 +23,12 @@
 	</div>
 	<script>
 		const { createApp } = Vue
-		// import data_urls from "./src/assets/data.json";
+		import data_urls from "./src/assets/data.json";
 
 		createApp({
 			data() {
 				return {
-					urls: {}
+					urls: data_urls.urls
 					// urls: [
 					// 	{
 					// 		kind: "设计参考效果",
@@ -120,18 +120,18 @@
 				};
 			},
 			method: {
-				mounted(){					
-					try {
-						const response = fetch('./assets/data.json');
-						if (!response.ok) {
-							throw new Error(`HTTP错误! 状态: ${response.status}`);
-						}
-						this.urls = response.json();
-					} catch (error) {
-						console.error('错误:', error);
-						document.getElementById('output').innerHTML = 
-							`<p style="color: red;">错误: ${error.message}</p>`;
-					}			
+				mounted(){
+						fetch('./assets/data.json')  // 假设文件在根目录
+							.then(response => {
+								if (!response.ok) throw new Error('文件未找到');
+								return response.json(); // 自动解析 JSON
+							})
+							.then(data => {
+								console.log(data);
+							})
+							.catch(err => {
+								console.error('加载失败:', err);
+							});
 				}
 			}
 		}).mount("#root")
