@@ -16,7 +16,7 @@
 			<div class="classify" v-for="items in urls">
 				<div class="Subheadings">{{items.kind}}</div>
 				<div class="content">
-					<a v-for="item in items.website" :href="item.url" target="_blank">{{item.title}}</a>
+					<a v-for="item in items.website" :href="item.url" target="_blank">{{item.name}}</a>
 				</div>
 			</div>
 		</div>
@@ -31,24 +31,24 @@
 						{
 							kind: "设计效果",
 							website: [
-								{title: "建E", url: "https://www.justeasy.cn/"},
-								{title: "知末", url: "https://www.znzmo.com/"},
-								{title: "拓者", url: "https://www.tuozhe8.com/"},
-								{title: "马蹄", url: "https://www.vsszan.com/forum.php"},							
-								{title: "站酷", url: "https://www.zcool.com.cn/discover?cate=0&subCate=637"},
-								{title: "室内设计师联盟", url: "https://www.cool-de.com/portal.php"},
-								{title: "花瓣", url: "https://huaban.com/"},
-								{title: "大作", url: "https://www.bigbigwork.com/"}								
+								{name: "建E", url: "https://www.justeasy.cn/"},
+								{name: "知末", url: "https://www.znzmo.com/"},
+								{name: "拓者", url: "https://www.tuozhe8.com/"},
+								{name: "马蹄", url: "https://www.vsszan.com/forum.php"},							
+								{name: "站酷", url: "https://www.zcool.com.cn/discover?cate=0&subCate=637"},
+								{name: "室内设计师联盟", url: "https://www.cool-de.com/portal.php"},
+								{name: "花瓣", url: "https://huaban.com/"},
+								{name: "大作", url: "https://www.bigbigwork.com/"}								
 							]
 						},
 						{
 							kind: "AI工具",
 							website: [
-								{title: "AI工具集", url: "https://ai-bot.cn/#term-38"},
-								{title: "TTSMaker在线AI配音工具", url: "https://ttsmaker.cn/"},
-								{title: "去水印AI", url: "https://www.watermarkremover.io/zh/upload"},
-								{title: "图片放大AI", url: "https://ai.nero.com/zh-cn/image-upscaler"},
-								{title: "Google AI Studio", url: "https://aistudio.google.com/prompts/new_chat"}
+								{name: "AI工具集", url: "https://ai-bot.cn/#term-38"},
+								{name: "TTSMaker在线AI配音工具", url: "https://ttsmaker.cn/"},
+								{name: "去水印AI", url: "https://www.watermarkremover.io/zh/upload"},
+								{name: "图片放大AI", url: "https://ai.nero.com/zh-cn/image-upscaler"},
+								{name: "Google AI Studio", url: "https://aistudio.google.com/prompts/new_chat"}
 								
 							]
 						},
@@ -56,88 +56,96 @@
 							kind: "机场",
 							website: [
 								
-								{title: "SSRDOG", url: "https://dog.hosbbq.com/#/register?code=sqoldld1"},
-								{title: "淘气兔", url: "https://vip.taoqitu.pro/shop.html"},
-								{title: "WgetCloud", url: "https://j8doba2sodptvzprvmcb.wgetcloud.org/"},
-								{title: "龙猫云", url: "https://a22.lml2vipaff01.cc/register?aff=jnSkBSZi"},
-								{title: "TaiShan Net", url: "https://jpcdn.taishan2025.icu/register?code=65LcgcFT"},
-								{title: "大哥云", url: "https://aff02.dgy02.com/#/register?code=SSEelIsB"},
-								{title: "闪电猫", url: "https://a01.scaffb08.cc/auth/register"},
-								{title: "魔戒", url: "https://mojie.xn--yrs494l.com/register?aff=NYbo711r"},
-								{title: "91", url: "https://91b18.cc/#/register?code=mmG8qyB4"},
-								{title: "GLaDOS", url: "https://glados.space/"},
-								{title: "CyberGuard", url: "https://www.cyberguard.best/#/register?code=Q8IXzRPW"},
-								{title: "奈云", url: "https://www.v2ny.de/#/register?path=register&code=ARsdCIDL"},
-								{title: "Nice Cloud", url: "https://nicecloud.co/register?aff=t9xkqhMV"}
+								{name: "SSRDOG", url: "https://dog.hosbbq.com/#/register?code=sqoldld1"},
+								{name: "淘气兔", url: "https://vip.taoqitu.pro/shop.html"},
+								{name: "WgetCloud", url: "https://j8doba2sodptvzprvmcb.wgetcloud.org/"},
+								{name: "龙猫云", url: "https://a22.lml2vipaff01.cc/register?aff=jnSkBSZi"},
+								{name: "TaiShan Net", url: "https://jpcdn.taishan2025.icu/register?code=65LcgcFT"},
+								{name: "大哥云", url: "https://aff02.dgy02.com/#/register?code=SSEelIsB"},
+								{name: "闪电猫", url: "https://a01.scaffb08.cc/auth/register"},
+								{name: "魔戒", url: "https://mojie.xn--yrs494l.com/register?aff=NYbo711r"},
+								{name: "91", url: "https://91b18.cc/#/register?code=mmG8qyB4"},
+								{name: "GLaDOS", url: "https://glados.space/"},
+								{name: "CyberGuard", url: "https://www.cyberguard.best/#/register?code=Q8IXzRPW"},
+								{name: "奈云", url: "https://www.v2ny.de/#/register?path=register&code=ARsdCIDL"},
+								{name: "Nice Cloud", url: "https://nicecloud.co/register?aff=t9xkqhMV"}
 							]
 						},
 						{
 							kind: "工具",
 							website: [
-								{title: "FlClash", url: "https://clashproxy.net/zh-CN/flclash.html"},
-								{title: "NXPowerLite Desktop", url: "https://nxpowerlite.apsgo.cn/zh-cn"},								
-								{title: "浏览器脚本大全", url: "https://greasyfork.org/zh-CN"},
-								{title: "enigma_virtual_box封包工具", url: "https://www.enigmaprotector.com/en/aboutvb.html"},
-                                {title: "图片取色器", url: "https://c.runoob.com/front-end/6214/#d7e9ff"},								
-                                {title: "IT-tools", url: "https://tools.datapipe.top/"},
-								{title: "datatool", url: "https://www.datatool.vip/"},
-								{title: "视频号下载", url: "https://sph.miuistore.com/"},
-								{title: "直播蜂(视频下载)", url: "https://www.zhibofeng.com/"}
+								{name: "FlClash", url: "https://clashproxy.net/zh-CN/flclash.html"},
+								{name: "NXPowerLite Desktop", url: "https://nxpowerlite.apsgo.cn/zh-cn"},								
+								{name: "浏览器脚本大全", url: "https://greasyfork.org/zh-CN"},
+								{name: "enigma_virtual_box封包工具", url: "https://www.enigmaprotector.com/en/aboutvb.html"},
+                                {name: "图片取色器", url: "https://c.runoob.com/front-end/6214/#d7e9ff"},								
+                                {name: "IT-tools", url: "https://tools.datapipe.top/"},
+								{name: "datatool", url: "https://www.datatool.vip/"},
+								{name: "视频号下载", url: "https://sph.miuistore.com/"},
+								{name: "直播蜂(视频下载)", url: "https://www.zhibofeng.com/"}
 							]
 						},
 						{
 							kind: "资源",
 							website: [
-								{title: "终极导航", url: "https://www.zjnav.com/"},
-								{title: "硬核指南", url: "https://yinghezhinan.com/"},
-								{title: "6v电影网", url: "https://www.hao6v.me/"},
-								{title: "夸克资源小海洋", url: "https://doc.bilistudy.com/"},
-								{title: "网盘搜索引擎", url: "https://pan.playr.top/"},
-								{title: "welib电子书", url: "https://zh.welib.org/"}
+								{name: "终极导航", url: "https://www.zjnav.com/"},
+								{name: "硬核指南", url: "https://yinghezhinan.com/"},
+								{name: "6v电影网", url: "https://www.hao6v.me/"},
+								{name: "夸克资源小海洋", url: "https://doc.bilistudy.com/"},
+								{name: "网盘搜索引擎", url: "https://pan.playr.top/"},
+								{name: "welib电子书", url: "https://zh.welib.org/"}
 							]
 						},
 						{
 							kind: "3D资源",
 							website: [
-								{title: "blender模型库", url: "https://www.blendermx.com/"},
-								{title: "CG模型王", url: "https://www.cgmxw.com/model.html"}							
+								{name: "blender模型库", url: "https://www.blendermx.com/"},
+								{name: "CG模型王", url: "https://www.cgmxw.com/model.html"}							
 							]
 						},						
 						{
 							kind: "剪辑素材",
 							website: [								
-								{title: "游戏素材", url: "http://www.sucaixiang.com/" },
-								{title: "千图网", url: "https://www.58pic.com/" },
-								{title: "palettemaker-配色网", url: "https://palettemaker.com/" },
-								{title: "PR模板网", url: "https://prmuban.com/" },
-								{title: "黑罐头", url: "https://www.heycan.com/material" },
-								{title: "爱给网", url: "https://www.aigei.com/" },
-								{title: "摄图网", url: "https://699pic.com/" },
-								{title: "新片场", url: "https://stock.xinpianchang.com/footage/" },								
-								{title: "光厂视频", url: "https://www.vjshi.com/" },
-								{title: "pixabay免版税资源", url: "https://pixabay.com/zh/" },
-								{title: "曲多多", url: "https://haifanwu.com/" },
-								{title: "猴子音悦", url: "https://houzi8.com/peiyue" },
-								{title: "漫舟动画", url: "https://manzhoudonghua.cn/"},
-								{title: "沙雕动画", url: "https://www.qudonghua.com/"}	
-							]
+								{name: "游戏素材", url: "http://www.sucaixiang.com/" },
+								{name: "千图网", url: "https://www.58pic.com/" },
+								{name: "palettemaker-配色网", url: "https://palettemaker.com/" },
+								{name: "PR模板网", url: "https://prmuban.com/" },
+								{name: "黑罐头", url: "https://www.heycan.com/material" },
+								{name: "爱给网", url: "https://www.aigei.com/" },
+								{name: "摄图网", url: "https://699pic.com/" },
+								{name: "新片场", url: "https://stock.xinpianchang.com/footage/" },								
+								{name: "光厂视频", url: "https://www.vjshi.com/" },
+								{name: "pixabay免版税资源", url: "https://pixabay.com/zh/" },
+								{name: "曲多多", url: "https://haifanwu.com/" },
+								{name: "猴子音悦", url: "https://houzi8.com/peiyue" },
+								{name: "漫舟动画", url: "https://manzhoudonghua.cn/"},
+								{name: "沙雕动画", url: "https://www.qudonghua.com/"},
+								{ name: 'Pexels', url: 'https://www.pexels.com/videos/'},
+								{ name: 'Mixkit', url: 'https://mixkit.co/'},
+								{ name: 'Coverr',  url: 'https://coverr.co/'},
+								{ name: 'Videvo', url: 'https://www.videvo.net/'},
+								{ name: 'YouTube音频库', url: 'https://www.youtube.com/audiolibrary/music'},
+								{ name: 'Bensound', url: 'https://www.bensound.com/'},
+								{ name: 'Free Music Archive',url: 'https://freemusicarchive.org/'},
+								{ name: 'Freesound', url: 'https://freesound.org/' }
+                        	]
 						},	
 						{
 							kind: "学习",
 							website: [
-								{title: "中国大学MOOC", url: "https://www.icourse163.org/"},
-								{title: "菜鸟教程", url: "https://www.runoob.com/"},
-								{title: "秘塔写作猫", url: "https://xiezuocat.com/"},
-								{title: "火龙果写作", url: "https://web.mypitaya.com/discovery"}
+								{name: "中国大学MOOC", url: "https://www.icourse163.org/"},
+								{name: "菜鸟教程", url: "https://www.runoob.com/"},
+								{name: "秘塔写作猫", url: "https://xiezuocat.com/"},
+								{name: "火龙果写作", url: "https://web.mypitaya.com/discovery"}
 							]
 						},
 						{
 							kind: "系统",
 							website: [
-								{title: "Rufus", url: "https://rufus.ie/zh/" },
-								{title: "微软系统", url: "https://msdn.itellyou.cn/" },
-								{title: "Ubuntu", url: "https://cn.ubuntu.com/desktop" },
-								{title: "Kali", url: "https://www.kali.org/" }
+								{name: "Rufus", url: "https://rufus.ie/zh/" },
+								{name: "微软系统", url: "https://msdn.itellyou.cn/" },
+								{name: "Ubuntu", url: "https://cn.ubuntu.com/desktop" },
+								{name: "Kali", url: "https://www.kali.org/" }
 							]
 						}	
 					]
