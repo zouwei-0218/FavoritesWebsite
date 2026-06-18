@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8" content="width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no" />
 	<title>网站收藏</title>
-	<link rel="stylesheet" href="./view/css/index.css">
-	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<!-- <script src="static/vue.global.js"></script> -->
+	<link rel="stylesheet" href="./css/index.css">
+	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+	
 </head>
 <body>	
 	<div id="root">
@@ -13,157 +13,45 @@
 			<div id="h1">
 				<h1>网站收藏</h1>
 			</div>
-			<div class="classify" v-for="items in urls">
-				<div class="Subheadings">{{items.kind}}</div>
-				<div class="content">
-					<a v-for="item in items.website" :href="item.url" target="_blank">{{item.name}}</a>
+			<div v-if="loading" class="loading">加载中...</div>
+			<div v-else-if="error" class="error">{{error}}</div>
+			<div v-else>
+				<div class="classify" v-for="items in urls">
+					<div class="Subheadings">{{items.kind}}</div>
+					<div class="content">
+						<a v-for="item in items.website" :href="item.url" target="_blank">{{item.name}}</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script src="./js/vue.global.js"></script>
 	<script>
+		
 		const { createApp } = Vue
 		
 		createApp({
 			data() {
 				return {
-					urls: [
-						{
-							kind: "设计效果",
-							website: [
-								{name: "建E", url: "https://www.justeasy.cn/"},
-								{name: "知末", url: "https://www.znzmo.com/"},
-								{name: "拓者", url: "https://www.tuozhe8.com/"},
-								{name: "马蹄", url: "https://www.vsszan.com/forum.php"},							
-								{name: "站酷", url: "https://www.zcool.com.cn/discover?cate=0&subCate=637"},
-								{name: "室内设计师联盟", url: "https://www.cool-de.com/portal.php"},
-								{name: "花瓣", url: "https://huaban.com/"},
-								{name: "大作", url: "https://www.bigbigwork.com/"}								
-							]
-						},
-						{
-							kind: "AI工具",
-							website: [
-								{name: "AI工具集", url: "https://ai-bot.cn/#term-38"},								
-								{name: "flow", url: "https://labs.google/fx/zh/tools/flow"},
-								{name: "geminigen", url: "https://geminigen.ai/"},
-								{name: "Prompt123", url: "https://prompt123.cn/?utm_source=novatools.cn"},								
-								{name: "去水印AI", url: "https://www.watermarkremover.io/zh/upload"},								
-								
-								
-							]
-						},
-						{
-							kind: "机场",
-							website: [
-								{name: "蘑菇云机场超市", url: "https://mushroombom.top/"},
-								{name: "SSRDOG", url: "https://dog.hosbbq.com/#/register?code=sqoldld1"},
-								{name: "淘气兔", url: "https://vip.taoqitu.pro/shop.html"},
-								{name: "WgetCloud", url: "https://j8doba2sodptvzprvmcb.wgetcloud.org/"},
-								{name: "龙猫云", url: "https://a22.lml2vipaff01.cc/register?aff=jnSkBSZi"},
-								{name: "TaiShan Net", url: "https://jpcdn.taishan2025.icu/register?code=65LcgcFT"},
-								{name: "大哥云", url: "https://aff02.dgy02.com/#/register?code=SSEelIsB"},
-								{name: "闪电猫", url: "https://a01.scaffb08.cc/auth/register"},
-								{name: "魔戒", url: "https://mojie.xn--yrs494l.com/register?aff=NYbo711r"},
-								{name: "91", url: "https://91b18.cc/#/register?code=mmG8qyB4"},
-								{name: "GLaDOS", url: "https://glados.space/"},
-								{name: "CyberGuard", url: "https://www.cyberguard.best/#/register?code=Q8IXzRPW"},
-								{name: "奈云", url: "https://www.v2ny.de/#/register?path=register&code=ARsdCIDL"},
-								{name: "Nice Cloud", url: "https://nicecloud.co/register?aff=t9xkqhMV"}
-							]
-						},
-						{
-							kind: "工具",
-							website: [
-								{name: "FlClash", url: "https://clashproxy.net/zh-CN/flclash.html"},
-								{name: "Radmin LAN", url: "https://www.radmin-lan.cn/"},	
-								{name: "NXPowerLite Desktop", url: "https://nxpowerlite.apsgo.cn/zh-cn"},								
-								{name: "浏览器脚本大全", url: "https://greasyfork.org/zh-CN"},
-								{name: "enigma_virtual_box封包工具", url: "https://www.enigmaprotector.com/en/aboutvb.html"},
-                                {name: "图片取色器", url: "https://c.runoob.com/front-end/6214/#d7e9ff"},								
-                                {name: "IT-tools", url: "https://tools.datapipe.top/"},
-								{name: "datatool", url: "https://www.datatool.vip/"},
-								{name: "视频号下载", url: "https://sph.miuistore.com/"},
-								{name: "直播蜂(视频下载)", url: "https://www.zhibofeng.com/"},
-								{name: "图片转ICO工具", url: "./view/page/img_to_ico.html"},
-								{name: "文本转srt字幕", url: "https://www.yalexin.top/office/tools/text/text2srt/"},
-								{name: "分离人声", url: "https://vocalremover.org/zh/"},								
-								{name: "TTSMaker在线AI配音工具", url: "https://ttsmaker.cn/"},
-								{name: "配音神器pro", url: "https://peiyinshenqi.com/tts/index"}
-							]
-						},
-						{
-							kind: "资源",
-							website: [
-								
-								{name: "灯塔导航", url: "https://www.beacon.cn/"},
-								{name: "终极导航", url: "https://www.zjnav.com/"},
-								{name: "综合导航", url: "https://fmhy.net/"},
-								{name: "硬核指南", url: "https://yinghezhinan.com/"},
-								{name: "6v电影网", url: "https://www.hao6v.me/"},
-								{name: "夸克资源小海洋", url: "https://doc.bilistudy.com/"},
-								{name: "网盘搜索引擎", url: "https://pan.playr.top/"},
-								{name: "welib电子书", url: "https://zh.welib.org/"},
-								{name: "Google Fonts", url: "https://fonts.google.com/"},
-								{name: "Font Squirrel", url: "www.fontsquirrel.com"},
-								
-							]
-						},
-						{
-							kind: "3D资源",
-							website: [
-								{name: "blender模型库", url: "https://www.blendermx.com/"},
-								{name: "CG模型王", url: "https://www.cgmxw.com/model.html"}							
-							]
-						},						
-						{
-							kind: "剪辑素材",
-							website: [								
-								{name: "游戏素材", url: "http://www.sucaixiang.com/" },
-								{name: "千图网", url: "https://www.58pic.com/" },
-								{name: "palettemaker-配色网", url: "https://palettemaker.com/" },
-								{name: "PR模板网", url: "https://prmuban.com/" },
-								{name: "黑罐头", url: "https://www.heycan.com/material" },
-								{name: "爱给网", url: "https://www.aigei.com/" },
-								{name: "摄图网", url: "https://699pic.com/" },
-								{name: "新片场", url: "https://stock.xinpianchang.com/footage/" },								
-								{name: "光厂视频", url: "https://www.vjshi.com/" },
-								{name: "pixabay免版税资源", url: "https://pixabay.com/zh/" },
-								{name: "曲多多", url: "https://haifanwu.com/" },
-								{name: "猴子音悦", url: "https://houzi8.com/peiyue" },
-								{name: "漫舟动画", url: "https://manzhoudonghua.cn/"},
-								{name: "沙雕动画", url: "https://www.qudonghua.com/"},
-								{ name: 'Pexels', url: 'https://www.pexels.com/videos/'},
-								{ name: 'Mixkit', url: 'https://mixkit.co/'},
-								{ name: 'Coverr',  url: 'https://coverr.co/'},
-								{ name: 'Videvo', url: 'https://www.videvo.net/'},
-								{ name: 'YouTube音频库', url: 'https://www.youtube.com/audiolibrary/music'},
-								{ name: 'Bensound', url: 'https://www.bensound.com/'},
-								{ name: 'Free Music Archive',url: 'https://freemusicarchive.org/'},
-								{ name: 'Freesound', url: 'https://freesound.org/' }
-                        	]
-						},	
-						{
-							kind: "学习",
-							website: [
-								{name: "中国大学MOOC", url: "https://www.icourse163.org/"},
-								{name: "菜鸟教程", url: "https://www.runoob.com/"},
-								{name: "秘塔写作猫", url: "https://xiezuocat.com/"},
-								{name: "火龙果写作", url: "https://web.mypitaya.com/discovery"}
-							]
-						},
-						{
-							kind: "系统",
-							website: [
-								{name: "Rufus", url: "https://rufus.ie/zh/" },
-								{name: "微软系统", url: "https://msdn.itellyou.cn/" },
-								{name: "Ubuntu", url: "https://cn.ubuntu.com/desktop" },
-								{name: "Kali", url: "https://www.kali.org/" }
-							]
-						}	
-					]
-					
+					urls: [],
+					loading: true,
+					error: null
 				};
+			},
+			async mounted() {
+				try {
+					const response = await fetch('./static/data/urls.json');
+					if (!response.ok) {
+						throw new Error(`HTTP error! status: ${response.status}`);
+					}
+					const data = await response.json();
+					this.urls = data;
+				} catch (error) {
+					console.error('加载数据失败:', error);
+					this.error = '数据加载失败，请稍后重试';
+				} finally {
+					this.loading = false;
+				}
 			}
 		}).mount("#root")
 
